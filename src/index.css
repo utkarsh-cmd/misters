@@ -1,13 +1,246 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* GLOBAL STYLES */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap");
+
+:root {
+  --primary-color: #e30a17;
+  --secondary-color: #9f9f9f;
+  --link-color: #e26372;
+  --text-color: #1b1b1b;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.main {
+  min-height: 90vh;
+}
+
+ul {
+  list-style: none;
+}
+
+/* UTILITIES */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.flex-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* HEADER */
+
+.header {
+  background-color: white;
+  width: 100%;
+  min-height: 5rem;
+  color: var(--secondary-color);
+  position: relative;
+}
+.logo img {
+  width: 100%;
+  max-width: 6rem;
+  min-width: 3rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.hamburger-menu {
+  display: none;
+  text-align: center;
+}
+.shop {
+  background-color: var(--primary-color);
+  color: white;
+  width: 9rem;
+  height: 2.8rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  margin: 0.3rem auto;
+}
+
+.menu li {
+  margin: auto 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.menu li:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.cart li {
+  margin: auto 0.4rem;
+}
+.cart li:hover {
+  cursor: pointer;
+}
+
+li img {
+  height: 1.7rem;
+}
+
+/* LOGIN PAGE AND SIGNUP PAGE */
+
+.login-page {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
+
+.login-form {
+  flex-direction: column;
+  width: 15rem;
+}
+.login-button {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 2rem;
+  border: none;
+  margin: 0.7rem 0.3rem;
+  cursor: pointer;
+}
+.login-form h3 {
+  margin: 0.3rem;
+  letter-spacing: 0.05rem;
+}
+
+.login-form input {
+  margin: 0.3rem;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #f5f5f5;
+  border: 0.15rem solid #e0e0e0;
+}
+.login-form input:focus {
+  outline: var(--primary-color);
+  border-color: #e30a1850;
+}
+.login-form label {
+  margin: 0.3rem;
+  align-self: flex-start;
+  font-weight: 700;
+}
+
+.login-form span {
+  color: var(--link-color);
+  padding-bottom: 0.1rem;
+  border-bottom: 0.1rem solid var(--link-color);
+}
+
+/* PROFILE PAGE */
+
+.profile-page {
+  position: relative;
+  min-height: 90vh;
+}
+.profile-text {
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+}
+.profile-text h2 {
+  margin: 2rem 0rem;
+}
+
+/* Tablets and under */
+@media (max-width: 786px) {
+  .menu li {
+    font-size: 0.7rem;
+    margin: auto 0.5rem;
+  }
+  li img {
+    height: 1.2rem;
+  }
+  .shop {
+    width: 6.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .menu,
+  .cart,
+  .shop-button,
+  .logo {
+    display: none;
+  }
+  .hamburger-menu {
+    display: inline-block;
+  }
+  .logo img {
+    position: relative;
+    top: 0.3rem;
+    right: 0.3rem;
+  }
+
+  .hamburger-icon {
+    margin-left: 1rem;
+  }
+  .show-menu {
+    position: relative;
+    z-index: 4;
+    height: 75vh;
+    margin: 2rem;
+    min-width: 70vw;
+    width: 100%;
+    background-color: #f5f5f5;
+  }
+  .mobile-logo {
+    width: 5rem;
+    height: 4rem;
+    margin-left: 1rem;
+  }
+  .mobile-logo img {
+    width: 100%;
+  }
+  .mobile-menu li,
+  .mobile-cart li {
+    margin: 1rem 0;
+  }
+
+  .login-form {
+    position: relative;
+    width: 13.5rem;
+    left: -5rem;
+  }
+  .login-form h4 {
+    font-size: 0.9rem;
+  }
+
+  .profile-text {
+    left: 0;
+    margin: 1rem;
+  }
 }
