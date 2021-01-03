@@ -15,7 +15,9 @@ const Header = ({ location }) => {
               <i onClick={() => setshow(!show)} className="fas fa-bars"></i>
             </div>
             <div className="mobile-logo flex">
-              <img src="./images/logo2.png" alt="Misters logo" />
+              <Link to="/">
+                <img src="./images/logo2.png" alt="Misters logo" />
+              </Link>
             </div>
           </div>
           {show ? (
@@ -44,7 +46,7 @@ const Header = ({ location }) => {
               {/* CHECK URL TO SHOW "LOGOUT" BUTTON */}
               <div className="mobile-shop-button">
                 {location.pathname === "/signup" ||
-                location.pathname === "/profile" ? (
+                location.pathname === "/" ? (
                   <button className="shop">LOGOUT</button>
                 ) : (
                   <button className="shop">SHOP</button>
@@ -57,7 +59,9 @@ const Header = ({ location }) => {
         </div>
         {/* NAVBAR FOR TABLETS AND PC DEVICES */}
         <div className="logo">
-          <img src="./images/logo2.png" alt="Misters logo" />
+          <Link to="/">
+            <img src="./images/logo2.png" alt="Misters logo" />
+          </Link>
         </div>
         <div className="menu">
           <ul className="flex-1">
@@ -81,8 +85,7 @@ const Header = ({ location }) => {
           </ul>
         </div>
         <div className="shop-button">
-          {location.pathname === "/signup" ||
-          location.pathname === "/profile" ? (
+          {location.pathname === "/signup" || location.pathname === "/" ? (
             <button className="shop">LOGOUT</button>
           ) : (
             <button className="shop">SHOP</button>
